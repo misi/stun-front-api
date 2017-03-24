@@ -40,7 +40,7 @@ $app->group('/v1',function() {
     $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
   })->add(
     new ResourceServerMiddleware(
-        $this->getContainer()->get('resourceserver')
+        $this->getContainer()->get('resource_server')
     )
   );
 
@@ -57,7 +57,7 @@ $app->group('/v1',function() {
 
   })->add(
     new ResourceServerMiddleware(
-        $this->getContainer()->get('resourceserver')
+        $this->getContainer()->get('resource_server')
     )
   );
 
@@ -78,7 +78,7 @@ $app->group('/v1',function() {
     $this->post('/feedback',STUN\Actions\LTCAction::class .':feedback');
   })->add(
     new ResourceServerMiddleware(
-        $this->getContainer()->get('resourceserver')
+        $this->getContainer()->get('resource_server')
     )
   );
 }
