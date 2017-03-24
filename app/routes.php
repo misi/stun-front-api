@@ -7,10 +7,10 @@ $app->group('/v1',function() {
 
   // root redirect to doc
   $this->get('',function ($request, $response, $args) {
-    return $res->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
+    return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
   });
 
-  $this->group('/docs',
+  $this->group('/docs',function ($request, $response, $args) {
     $this->get('',function ($request, $response, $args) {
       return
     });
