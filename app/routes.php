@@ -37,7 +37,7 @@ $app->group('/v1',function() {
     $this->delete('/user',STUN\Actions\LTCAction::class . ':deleteUser');
 
     // servers
-    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList')
+    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
   })->add(
     new ResourceServerMiddleware(
         $app->getContainer()->get('resourceserver')
