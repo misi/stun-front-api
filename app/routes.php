@@ -53,7 +53,7 @@ $app->group('/v1',function() {
     $this->delete('/token',STUN\Actions\LTCAction::class . ':deleteToken');
 
     // servers
-    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList')
+    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
 
   })->add(
     new ResourceServerMiddleware(
@@ -70,15 +70,15 @@ $app->group('/v1',function() {
     $this->delete('/client',STUN\Actions\LTCAction::class . ':deleteClient');
 
     // servers
-    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList')
+    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
   });
 
   // General
   $this->group('/general',function(){
-    $this->post('/feedback',STUN\Actions\LTCAction::class .':feedback')
+    $this->post('/feedback',STUN\Actions\LTCAction::class .':feedback');
   })->add(
     new ResourceServerMiddleware(
-        $app->getContainer()->get('resourceserver')
+        $app->getContainer()->get('resourceserver');
     )
   );
 
