@@ -2,7 +2,7 @@
 
 use Slim\Views\Twig;
 
-
+use League\OAuth2\Server\ResourceServer;
 
 // DIC configuration
 $container = $app->getContainer();
