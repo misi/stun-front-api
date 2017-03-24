@@ -3,6 +3,7 @@
 use Slim\Views\Twig;
 
 use League\OAuth2\Server\ResourceServer;
+use STUN\Repositories\AccessTokenRepository
 
 // DIC configuration
 $container = $app->getContainer();
@@ -94,7 +95,7 @@ $container['oauth_servers'] = function ($c) {
 
 
 $container['access_tokens'] = function ($c) {
-    return new STUN\Repositories\AccessTokenRepository($c->get('pdo'), $c->get('logger'),'oauth');
+    return new AccessTokenRepository($c->get('pdo'), $c->get('logger'),'oauth');
 };
 
 // resource server
