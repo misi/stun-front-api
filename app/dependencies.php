@@ -136,6 +136,6 @@ $container[STUN\Actions\OAuthAction::class] = function ($c) {
 
 $container[STUN\Actions\GeneralAction::class] = function ($c) {
     return new STUN\Actions\GeneralAction($c->get('logger'),
-                                          $c->get('settings')['phpmailer'],
+                                          $c->get('settings')['phpmailer']
                                         );
 };
