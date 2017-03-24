@@ -2,7 +2,8 @@
 // Routes
 
 use League\OAuth2\Server\ResourceServer;
-use League\OAuth2\Server\Middleware\ResourceServerMiddleware
+use League\OAuth2\Server\Middleware\ResourceServerMiddleware;
+
 $app->group('/v1',function() {
 
   // root redirect to doc
