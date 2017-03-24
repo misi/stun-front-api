@@ -78,7 +78,7 @@ $app->group('/v1',function() {
     $this->post('/feedback',STUN\Actions\LTCAction::class .':feedback');
   })->add(
     new ResourceServerMiddleware(
-        $app->getContainer()->get('resourceserver');
+        $app->getContainer()->get('resourceserver')
     )
   );
 
