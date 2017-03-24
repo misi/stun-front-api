@@ -14,7 +14,7 @@ $app->group('/v1',function() {
   $this->group('/docs',function ($request, $response, $args) {
     $this->get('',function ($request, $response, $args) {
       //TODO add twig swagger index
-      return response->withStatus(200);
+      return $response->withStatus(200);
     });
 
     // swagger.json
