@@ -95,7 +95,7 @@ $container['oauth_servers'] = function ($c) {
 
 
 $container['access_tokens'] = function ($c) {
-    return new AccessTokenRepository($c->get('pdo'), $c->get('logger'),'oauth');
+    return new AccessTokenRepository();
 };
 
 // resource server
