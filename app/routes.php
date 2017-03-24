@@ -11,7 +11,7 @@ $app->group('/v1',function() {
     return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
   });
 
-  $this->group('/docs',function ($request, $response, $args) {
+  $this->group('/docs',function () {
     $this->get('',function ($request, $response, $args) {
       //TODO add twig swagger index
       return $response->withStatus(200);
