@@ -102,7 +102,7 @@ $container['access_tokens'] = function ($c) {
 $container['resource_server'] = function ($c) {
         $settings = $c->get('settings')['resourceserver'];
         $server = new ResourceServer(
-            $c->get(access_tokens),            // instance of AccessTokenRepositoryInterface
+            $c->get('access_tokens'),            // instance of AccessTokenRepositoryInterface
             'file://' . __DIR__ . '/' . $settings['publickey']  // the authorization server's public key
         );
         return $server;
