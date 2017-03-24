@@ -15,7 +15,7 @@ $app->group('/v1',function() {
     $this->get('',function ($request, $response, $args) {
       //TODO add twig swagger index
       return $response->withStatus(200);
-    });
+    })->setName('docs');
 
     // swagger.json
     $this->get('/swagger.json',function ($request, $response, $args) {
@@ -24,7 +24,7 @@ $app->group('/v1',function() {
         ->write($swagger);
     })->setName('swagger');
 
-  })->setName('docs');
+  });
 
 
   // LTC
