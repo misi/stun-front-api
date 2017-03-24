@@ -3,7 +3,7 @@
 use Slim\Views\Twig;
 
 use League\OAuth2\Server\ResourceServer;
-use STUN\Repositories\AccessTokenRepository
+use STUN\Repositories\AccessTokenRepository;
 
 // DIC configuration
 $container = $app->getContainer();
