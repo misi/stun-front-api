@@ -81,5 +81,5 @@ $app->group('/v1',function() {
         $app->getContainer()->get('resourceserver')
     )
   );
-
 }
+);
