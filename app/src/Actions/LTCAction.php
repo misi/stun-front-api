@@ -43,11 +43,41 @@ final class LTCAction
             return $response->withStatus(500)->withBody($body);
         }
     }
+    /**
+     * @SWG\Get(
+     *     path="/ltc/servers",
+     *     summary="Get all LTC servers",
+     *     tags={"ltc"},
+     *     description="Get all servers by SAML EPPN attribute",
+     *     operationId="findServers",
+     *     produces={"application/json"},
+     *     @SWG\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @SWG\Schema(
+     *             type="array",
+     *             @SWG\Items(ref="#/definitions/Servers")
+     *         ),
+     *     ),
+     *     @SWG\Response(
+     *         response="500",
+     *         description="Internal Server Error",
+     *     ),
+     *     security={
+     *         {
+     *             "client_auth": {"ltc"}
+     *         }
+     *     },
+     * )
+     */
+     public function getUser(ServerRequestInterface $request, ResponseInterface $response, $args){
+     }
+
 
     /**
      * @SWG\Get(
      *     path="/ltc/user",
-     *     summary="Get User by EPPN",
+     *     summary="Get User (by EPPN)",
      *     tags={"ltc"},
      *     description="Get a user by SAML EPPN attribute",
      *     operationId="findUserByEPPN",
@@ -72,6 +102,10 @@ final class LTCAction
      *     @SWG\Response(
      *         response="400",
      *         description="Invalid eppn value",
+     *     ),
+     *     @SWG\Response(
+     *         response="500",
+     *         description="Internal Server Error",
      *     ),
      *     security={
      *         {
@@ -111,6 +145,10 @@ final class LTCAction
       *         response=405,
       *         description="Invalid input",
       *     ),
+      *     @SWG\Response(
+      *         response="500",
+      *         description="Internal Server Error",
+      *     ),
       *     security={{"client_auth":{"ltc"}}}
       * )
       */
@@ -123,7 +161,7 @@ final class LTCAction
      *     path="/ltc/user",
      *     tags={"ltc"},
      *     operationId="updateUser",
-     *     summary="Update an existing User",
+     *     summary="Update User",
      *     description="",
      *     consumes={"application/json"},
      *     produces={"application/json"},
@@ -154,6 +192,10 @@ final class LTCAction
      *         response=405,
      *         description="Validation exception",
      *     ),
+     *     @SWG\Response(
+     *         response="500",
+     *         description="Internal Server Error",
+     *     ),
      *     security={{"client_auth":{"ltc"}}}
      * )
      */
@@ -164,7 +206,7 @@ final class LTCAction
     /**
      * @SWG\Delete(
      *     path="ltc/user",
-     *     summary="Deletes a user",
+     *     summary="Delete User",
      *     description="",
      *     operationId="deleteUser",
      *     produces={"application/json"},
@@ -188,6 +230,10 @@ final class LTCAction
      *     @SWG\Response(
      *         response=404,
      *         description="Pet not found"
+     *     ),
+     *     @SWG\Response(
+     *         response="500",
+     *         description="Internal Server Error",
      *     ),
      *     security={{"client_auth":{"ltc"}}}
      * )
