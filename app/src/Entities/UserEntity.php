@@ -19,12 +19,12 @@ class User
      * @SWG\Property(example="secret123")
      * @var string
      */
-    public $clear_password;
+    public $password_clear;
     /**
      * @SWG\Property(example="68b329da9893e34099c7d8ad5cb9c940")
      * @var string
      */
-    public $ha1_password;
+    public $password_ha1;
     /**
      * @SWG\Property(example="turn.geant.org")
      * @var string
