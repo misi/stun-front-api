@@ -11,9 +11,8 @@ class IP
      */
     public $address;
     /**
-     * @SWG\Property(enum={"IPv4", "IPv6"}")
-     * @SWG\Property(example="IPv4")
      * @var string
+     * @SWG\Property(example="IPv4",enum={"IPv4", "IPv6"}")
      */
     public $type;
 }
