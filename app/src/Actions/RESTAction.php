@@ -75,7 +75,7 @@ final class RESTAction
      * @SWG\Get(
      *     path="/rest/token",
      *     summary="Get Token (by EPPN)",
-     *     tags={"rest"},
+     *     tags={"REST"},
      *     description="Get a token by SAML EPPN attribute",
      *     operationId="findTokenByEPPN",
      *     produces={"application/json"},
@@ -117,7 +117,7 @@ final class RESTAction
      /**
       * @SWG\Post(
       *     path="/rest/token",
-      *     tags={"rest"},
+      *     tags={"REST"},
       *     operationId="addToken",
       *     summary="Add a new token",
       *     description="",
@@ -156,7 +156,7 @@ final class RESTAction
      /**
      * @SWG\Put(
      *     path="/rest/token",
-     *     tags={"rest"},
+     *     tags={"REST"},
      *     operationId="updateToken",
      *     summary="Update Token",
      *     description="",
@@ -207,7 +207,7 @@ final class RESTAction
      *     description="",
      *     operationId="deleteToken",
      *     produces={"application/json"},
-     *     tags={"rest"},
+     *     tags={"REST"},
      *     @SWG\Parameter(
      *         description="Token id to delete",
      *         in="query",
