@@ -56,7 +56,7 @@ final class LTCAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Servers")
+     *             @SWG\Items(ref="#/definitions/Server")
      *         ),
      *     ),
      *     @SWG\Response(
