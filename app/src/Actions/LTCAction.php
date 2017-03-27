@@ -47,7 +47,7 @@ final class LTCAction
     /**
      * @SWG\Get(
      *     path="/ltc/user",
-     *     summary="get user by eppn",
+     *     summary="Get User by EPPN",
      *     tags={"ltc"},
      *     description="Get a user by SAML EPPN attribute",
      *     operationId="findUserByEPPN",
@@ -88,7 +88,7 @@ final class LTCAction
       *     path="/ltc/user",
       *     tags={"ltc"},
       *     operationId="addUser",
-      *     summary="Add a new user to the Long Term Credential(LTC) service",
+      *     summary="Add a new user",
       *     description="",
       *     consumes={"application/json"},
       *     produces={"application/json"},
