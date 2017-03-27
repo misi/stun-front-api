@@ -23,6 +23,6 @@
   *         "ltc": "access to ltc service"
   *         "rest": "access to rest"
   *         "oauth": "access to oauth service"
-  *     },
+  *     }
   * )
   */
