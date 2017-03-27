@@ -21,9 +21,10 @@ $app->group('/v1',function() {
     })->setName('swagger');
 
     $this->get('',function ($request, $response, $args) {
-      return $this->get('view')->render($response, 'index.twig',
+      $view=$this->get('view');
+      return $view->render($response, 'index.twig',
               [
-                'json_url' => $this->router->pathFor('swagger'),
+                'json_url' => $request->getAuthority().$this->router->pathFor('swagger')
 		          ]
             );
     })->setName('docs');
