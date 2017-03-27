@@ -22,9 +22,10 @@ $app->group('/v1',function() {
 
     $this->get('',function ($request, $response, $args) {
       $view=$this->get('view');
+      $uri=$request->getUri();
       return $view->render($response, 'index.twig',
               [
-                'json_url' => $request->getUri()->getAuthority().$this->router->pathFor('swagger')
+                'json_url' => $uri->getScheme().$uri->getAuthority().$this->router->pathFor('swagger')
 		          ]
             );
     })->setName('docs');
