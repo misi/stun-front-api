@@ -12,7 +12,7 @@ class Feedback
      */
     public $Fromaddress;
     /**
-     * @SWG\Property()
+     * @SWG\Property(example="Houston we have problem!")
      * @var string
      */
     public $msg;
