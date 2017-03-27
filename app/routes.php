@@ -30,6 +30,16 @@ $app->group('/v1',function() {
             );
     })->setName('docs');
 
+    $this->get('/redoc',function ($request, $response, $args) {
+      $view=$this->get('view');
+      $uri=$request->getUri();
+      return $view->render($response, 'redoc.twig',
+              [
+                'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
+		          ]
+            );
+    })->setName('redoc');
+
   });
 
 
