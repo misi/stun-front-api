@@ -2,7 +2,8 @@
 /**
   * @SWG\Swagger(
   *     schemes={"https"},
-  *     basePath="/v1",
+  *     basePath="front/v1",
+  *     host="api.turn.geant.org",
   *     @SWG\Info(
   *         version="1.0",
   *         title="TURN FRONTEND API",
@@ -23,6 +24,7 @@
   *         "ltc": "access to ltc service",
   *         "rest": "access to rest",
   *         "oauth": "access to oauth service",
+  *         "general": "access to general service",
   *     }
   * )
   */
