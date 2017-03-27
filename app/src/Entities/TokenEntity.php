@@ -2,7 +2,7 @@
 /**
  * @SWG\Definition(required={"token"}, type="object", @SWG\Xml(name="Token"))
  */
- class User
+Class Token
 {
     /**
      * @SWG\Property(format="int64")
