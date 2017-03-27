@@ -8,26 +8,23 @@ use Zend\Diactoros\Stream;
 
 use Psr\Log\LoggerInterface;
 
-use STUN\Repositories\UserRepository
+use STUN\Repositories\TokenRepository
 use STUN\Repositories\ServerRepository
 
 
 
 
-final class LTCAction
+final class RESTAction
 {
     private $logger;
 
-    private $users;
+    private $servers;
 
 
     public function __construct(LoggerInterface $logger, ServerRepository $servers)
     {
         $this->logger = $logger;
-        $this->authserver = $authserver;
-        $this->userrepository = $userrepository;
-        $this->view = $view;
-        $this->session = $session;
+        $this->servers = $servers;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $args)
@@ -45,10 +42,10 @@ final class LTCAction
     }
     /**
      * @SWG\Get(
-     *     path="/ltc/servers",
-     *     summary="Get all LTC servers",
-     *     tags={"ltc","servers"},
-     *     description="Get all servers by SAML EPPN attribute",
+     *     path="/rest/servers",
+     *     summary="Get all REST servers",
+     *     tags={"REST","Servers"},
+     *     description="Get all servers",
      *     operationId="findServers",
      *     produces={"application/json"},
      *     @SWG\Response(
@@ -65,22 +62,22 @@ final class LTCAction
      *     ),
      *     security={
      *         {
-     *             "client_auth": {"ltc"}
+     *             "client_auth": {"rest"}
      *         }
      *     },
      * )
      */
-     public function getUser(ServerRequestInterface $request, ResponseInterface $response, $args){
+     public function getServers(ServerRequestInterface $request, ResponseInterface $response, $args){
      }
 
 
     /**
      * @SWG\Get(
-     *     path="/ltc/user",
-     *     summary="Get User (by EPPN)",
-     *     tags={"ltc"},
-     *     description="Get a user by SAML EPPN attribute",
-     *     operationId="findUserByEPPN",
+     *     path="/rest/token",
+     *     summary="Get Token (by EPPN)",
+     *     tags={"rest"},
+     *     description="Get a token by SAML EPPN attribute",
+     *     operationId="findTokenByEPPN",
      *     produces={"application/json"},
      *     @SWG\Parameter(
      *         name="eppn",
@@ -96,7 +93,7 @@ final class LTCAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/User")
+     *             @SWG\Items(ref="#/definitions/Token")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -109,36 +106,36 @@ final class LTCAction
      *     ),
      *     security={
      *         {
-     *             "client_auth": {"ltc"}
+     *             "client_auth": {"rest"}
      *         }
      *     },
      * )
      */
-     public function getUser(ServerRequestInterface $request, ResponseInterface $response, $args){
+     public function getToken(ServerRequestInterface $request, ResponseInterface $response, $args){
      }
 
      /**
       * @SWG\Post(
-      *     path="/ltc/user",
-      *     tags={"ltc"},
-      *     operationId="addUser",
-      *     summary="Add a new user",
+      *     path="/rest/token",
+      *     tags={"rest"},
+      *     operationId="addToken",
+      *     summary="Add a new token",
       *     description="",
       *     consumes={"application/json"},
       *     produces={"application/json"},
       *     @SWG\Parameter(
       *         name="body",
       *         in="body",
-      *         description="User object that needs to be added to the Service",
+      *         description="Token object that needs to be added to the Service",
       *         required=true,
-      *         @SWG\Schema(ref="#/definitions/User"),
+      *         @SWG\Schema(ref="#/definitions/Token"),
       *     ),
       *     @SWG\Response(
       *         response=200,
       *         description="successful operation",
       *         @SWG\Schema(
       *             type="array",
-      *             @SWG\Items(ref="#/definitions/User")
+      *             @SWG\Items(ref="#/definitions/Token")
       *         ),
       *     ),
       *     @SWG\Response(
@@ -149,35 +146,35 @@ final class LTCAction
       *         response="500",
       *         description="Internal Server Error",
       *     ),
-      *     security={{"client_auth":{"ltc"}}}
+      *     security={{"client_auth":{"rest"}}}
       * )
       */
-     public function addUser()
+     public function addToken()
      {
      }
 
      /**
      * @SWG\Put(
-     *     path="/ltc/user",
-     *     tags={"ltc"},
-     *     operationId="updateUser",
-     *     summary="Update User",
+     *     path="/rest/token",
+     *     tags={"rest"},
+     *     operationId="updateToken",
+     *     summary="Update Token",
      *     description="",
      *     consumes={"application/json"},
      *     produces={"application/json"},
      *     @SWG\Parameter(
      *         name="body",
      *         in="body",
-     *         description="User object that needs to be updated",
+     *         description="Token object that needs to be updated",
      *         required=true,
-     *         @SWG\Schema(ref="#/definitions/User"),
+     *         @SWG\Schema(ref="#/definitions/Token"),
      *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/User")
+     *             @SWG\Items(ref="#/definitions/Token")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -186,7 +183,7 @@ final class LTCAction
      *     ),
      *     @SWG\Response(
      *         response=404,
-     *         description="User not found",
+     *         description="Token not found",
      *     ),
      *     @SWG\Response(
      *         response=405,
@@ -196,25 +193,25 @@ final class LTCAction
      *         response="500",
      *         description="Internal Server Error",
      *     ),
-     *     security={{"client_auth":{"ltc"}}}
+     *     security={{"client_auth":{"rest"}}}
      * )
      */
-    public function updateUser()
+    public function updateToken()
     {
     }
 
     /**
      * @SWG\Delete(
-     *     path="/ltc/user1",
-     *     summary="Delete User",
+     *     path="/rest/token",
+     *     summary="Delete Token",
      *     description="",
-     *     operationId="deleteUser",
+     *     operationId="deleteToken",
      *     produces={"application/json"},
-     *     tags={"ltc"},
+     *     tags={"rest"},
      *     @SWG\Parameter(
-     *         description="User id to delete",
+     *         description="Token id to delete",
      *         in="query",
-     *         name="UserId",
+     *         name="TokenId",
      *         required=true,
      *         type="integer",
      *         format="int64"
@@ -229,16 +226,16 @@ final class LTCAction
      *     ),
      *     @SWG\Response(
      *         response=404,
-     *         description="User not found"
+     *         description="Token not found"
      *     ),
      *     @SWG\Response(
      *         response="500",
      *         description="Internal Server Error",
      *     ),
-     *     security={{"client_auth":{"ltc"}}}
+     *     security={{"client_auth":{"rest"}}}
      * )
      */
-    public function deleteUser()
+    public function deleteToken()
     {
     }
 }

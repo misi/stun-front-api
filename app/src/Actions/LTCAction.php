@@ -47,7 +47,7 @@ final class LTCAction
      * @SWG\Get(
      *     path="/ltc/servers",
      *     summary="Get all LTC servers",
-     *     tags={"ltc","servers"},
+     *     tags={"LTC","Servers"},
      *     description="Get all servers by SAML EPPN attribute",
      *     operationId="findServers",
      *     produces={"application/json"},
@@ -70,7 +70,7 @@ final class LTCAction
      *     },
      * )
      */
-     public function getUser(ServerRequestInterface $request, ResponseInterface $response, $args){
+     public function getServers(ServerRequestInterface $request, ResponseInterface $response, $args){
      }
 
 
@@ -78,7 +78,7 @@ final class LTCAction
      * @SWG\Get(
      *     path="/ltc/user",
      *     summary="Get User (by EPPN)",
-     *     tags={"ltc"},
+     *     tags={"LTC"},
      *     description="Get a user by SAML EPPN attribute",
      *     operationId="findUserByEPPN",
      *     produces={"application/json"},
@@ -120,7 +120,7 @@ final class LTCAction
      /**
       * @SWG\Post(
       *     path="/ltc/user",
-      *     tags={"ltc"},
+      *     tags={"LTC"},
       *     operationId="addUser",
       *     summary="Add a new user",
       *     description="",
@@ -159,7 +159,7 @@ final class LTCAction
      /**
      * @SWG\Put(
      *     path="/ltc/user",
-     *     tags={"ltc"},
+     *     tags={"LTC"},
      *     operationId="updateUser",
      *     summary="Update User",
      *     description="",
@@ -205,12 +205,12 @@ final class LTCAction
 
     /**
      * @SWG\Delete(
-     *     path="/ltc/user1",
+     *     path="/ltc/user",
      *     summary="Delete User",
      *     description="",
      *     operationId="deleteUser",
      *     produces={"application/json"},
-     *     tags={"ltc"},
+     *     tags={"LTC"},
      *     @SWG\Parameter(
      *         description="User id to delete",
      *         in="query",

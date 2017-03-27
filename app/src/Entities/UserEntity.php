@@ -6,11 +6,6 @@
 class User
 {
     /**
-     * @SWG\Property(format="int64")
-     * @var int
-     */
-    public $id;
-    /**
      * @SWG\Property(example="user1")
      * @var string
      */

@@ -6,11 +6,6 @@
 class IP
 {
     /**
-     * @SWG\Property(format="int64")
-     * @var int
-     */
-    public $id;
-    /**
      * @SWG\Property(example="192.0.2.10")
      * @var string
      */
