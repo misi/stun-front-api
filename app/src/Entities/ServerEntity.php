@@ -1,6 +1,6 @@
 <?php
 /**
- * @SWG\Definition(required={"username", "ha1_password"}, type="object", @SWG\Xml(name="User"))
+ * @SWG\Definition(required={"fqdn","ip","organization","geolocation"}, type="object", @SWG\Xml(name="Server"))
  */
 class Server
 {
@@ -15,18 +15,18 @@ class Server
      */
     public $fqdn;
     /**
+     * @SWG\Property(example="GITDA/NIIF")
+     * @var string
+     */
+    public $organization;
+    /**
      * @SWG\Property()
      * @var IP
      */
     public $ip;
     /**
-     * @SWG\Property(example="68b329da9893e34099c7d8ad5cb9c940")
-     * @var string
+     * @SWG\Property()
+     * @var Geolocation
      */
-    public $ha1_password;
-    /**
-     * @SWG\Property(example="turn.geant.org")
-     * @var string
-     */
-    public $realm;
+    public $geolocation;
 }
