@@ -5,11 +5,6 @@
 class Server
 {
     /**
-     * @SWG\Property(format="int64")
-     * @var int
-     */
-    public $id;
-    /**
      * @SWG\Property(example="turn1.lab.vvc.niif.hu")
      * @var string
      */
