@@ -24,7 +24,7 @@ $app->group('/v1',function() {
       $view=$this->get('view');
       return $view->render($response, 'index.twig',
               [
-                'json_url' => $request->getAuthority().$this->router->pathFor('swagger')
+                'json_url' => $request->getUri()->getAuthority().$this->router->pathFor('swagger')
 		          ]
             );
     })->setName('docs');
