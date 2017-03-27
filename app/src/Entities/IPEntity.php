@@ -11,7 +11,7 @@ class IP
      */
     public $id;
     /**
-     * @SWG\Property(example="turn1.lab.vvc.niif.hu")
+     * @SWG\Property(example="192.0.2.10")
      * @var string
      */
     public $address;
