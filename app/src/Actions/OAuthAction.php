@@ -8,13 +8,13 @@ use Zend\Diactoros\Stream;
 
 use Psr\Log\LoggerInterface;
 
-use STUN\Repositories\TokenRepository
+use STUN\Repositories\ClientRepository
 use STUN\Repositories\ServerRepository
 
 
 
 
-final class RESTAction
+final class OAuthAction
 {
     private $logger;
 
@@ -29,7 +29,7 @@ final class RESTAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $args)
     {
-        $this->logger->debug("REST action dispatched");
+        $this->logger->debug("OAuth action dispatched");
 
         try {
 
@@ -42,9 +42,9 @@ final class RESTAction
     }
     /**
      * @SWG\Get(
-     *     path="/rest/servers",
-     *     summary="Get all REST servers",
-     *     tags={"REST","Servers"},
+     *     path="/oauth/servers",
+     *     summary="Get all OAuth servers",
+     *     tags={"OAuth","Servers"},
      *     description="Get all servers",
      *     operationId="findServers",
      *     produces={"application/json"},
@@ -62,7 +62,7 @@ final class RESTAction
      *     ),
      *     security={
      *         {
-     *             "client_auth": {"rest"}
+     *             "client_auth": {"oauth"}
      *         }
      *     },
      * )
@@ -73,11 +73,11 @@ final class RESTAction
 
     /**
      * @SWG\Get(
-     *     path="/rest/token",
-     *     summary="Get Token (by EPPN)",
-     *     tags={"REST"},
-     *     description="Get a token by SAML EPPN attribute",
-     *     operationId="findTokenByEPPN",
+     *     path="/oauth/client",
+     *     summary="Get Client (by EPPN)",
+     *     tags={"OAuth"},
+     *     description="Get a client by SAML EPPN attribute",
+     *     operationId="findClientByEPPN",
      *     produces={"application/json"},
      *     @SWG\Parameter(
      *         name="eppn",
@@ -93,7 +93,7 @@ final class RESTAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Token")
+     *             @SWG\Items(ref="#/definitions/Client")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -106,36 +106,36 @@ final class RESTAction
      *     ),
      *     security={
      *         {
-     *             "client_auth": {"rest"}
+     *             "client_auth": {"oauth"}
      *         }
      *     },
      * )
      */
-     public function getToken(ServerRequestInterface $request, ResponseInterface $response, $args){
+     public function getClient(ServerRequestInterface $request, ResponseInterface $response, $args){
      }
 
      /**
       * @SWG\Post(
-      *     path="/rest/token",
-      *     tags={"REST"},
-      *     operationId="addToken",
-      *     summary="Add a new token",
+      *     path="/oauth/client",
+      *     tags={"OAuth"},
+      *     operationId="addClient",
+      *     summary="Add a new client",
       *     description="",
       *     consumes={"application/json"},
       *     produces={"application/json"},
       *     @SWG\Parameter(
       *         name="body",
       *         in="body",
-      *         description="Token object that needs to be added to the Service",
+      *         description="Client object that needs to be added to the Service",
       *         required=true,
-      *         @SWG\Schema(ref="#/definitions/Token"),
+      *         @SWG\Schema(ref="#/definitions/Client"),
       *     ),
       *     @SWG\Response(
       *         response=200,
       *         description="successful operation",
       *         @SWG\Schema(
       *             type="array",
-      *             @SWG\Items(ref="#/definitions/Token")
+      *             @SWG\Items(ref="#/definitions/Client")
       *         ),
       *     ),
       *     @SWG\Response(
@@ -146,35 +146,35 @@ final class RESTAction
       *         response="500",
       *         description="Internal Server Error",
       *     ),
-      *     security={{"client_auth":{"rest"}}}
+      *     security={{"client_auth":{"oauth"}}}
       * )
       */
-     public function addToken()
+     public function addClient()
      {
      }
 
      /**
      * @SWG\Put(
-     *     path="/rest/token",
-     *     tags={"REST"},
-     *     operationId="updateToken",
-     *     summary="Update Token",
+     *     path="/oauth/client",
+     *     tags={"OAuth"},
+     *     operationId="updateClient",
+     *     summary="Update Client",
      *     description="",
      *     consumes={"application/json"},
      *     produces={"application/json"},
      *     @SWG\Parameter(
      *         name="body",
      *         in="body",
-     *         description="Token object that needs to be updated",
+     *         description="Client object that needs to be updated",
      *         required=true,
-     *         @SWG\Schema(ref="#/definitions/Token"),
+     *         @SWG\Schema(ref="#/definitions/Client"),
      *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Token")
+     *             @SWG\Items(ref="#/definitions/Client")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -183,7 +183,7 @@ final class RESTAction
      *     ),
      *     @SWG\Response(
      *         response=404,
-     *         description="Token not found",
+     *         description="Client not found",
      *     ),
      *     @SWG\Response(
      *         response=405,
@@ -193,25 +193,25 @@ final class RESTAction
      *         response="500",
      *         description="Internal Server Error",
      *     ),
-     *     security={{"client_auth":{"rest"}}}
+     *     security={{"client_auth":{"oauth"}}}
      * )
      */
-    public function updateToken()
+    public function updateClient()
     {
     }
 
     /**
      * @SWG\Delete(
-     *     path="/rest/token",
-     *     summary="Delete Token",
+     *     path="/oauth/client",
+     *     summary="Delete Client",
      *     description="",
-     *     operationId="deleteToken",
+     *     operationId="deleteClient",
      *     produces={"application/json"},
-     *     tags={"REST"},
+     *     tags={"OAuth"},
      *     @SWG\Parameter(
-     *         description="Token id to delete",
+     *         description="Client id to delete",
      *         in="query",
-     *         name="TokenId",
+     *         name="ClientId",
      *         required=true,
      *         type="integer",
      *         format="int64"
@@ -226,16 +226,16 @@ final class RESTAction
      *     ),
      *     @SWG\Response(
      *         response=404,
-     *         description="Token not found"
+     *         description="Client not found"
      *     ),
      *     @SWG\Response(
      *         response="500",
      *         description="Internal Server Error",
      *     ),
-     *     security={{"client_auth":{"rest"}}}
+     *     security={{"client_auth":{"oauth"}}}
      * )
      */
-    public function deleteToken()
+    public function deleteClient()
     {
     }
 }
