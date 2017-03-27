@@ -229,7 +229,7 @@ final class LTCAction
      *     ),
      *     @SWG\Response(
      *         response=404,
-     *         description="Pet not found"
+     *         description="User not found"
      *     ),
      *     @SWG\Response(
      *         response="500",
@@ -238,7 +238,7 @@ final class LTCAction
      *     security={{"client_auth":{"ltc"}}}
      * )
      */
-    public function deletePet()
+    public function deleteUser()
     {
     }
 }
