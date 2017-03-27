@@ -47,7 +47,7 @@ final class LTCAction
      * @SWG\Get(
      *     path="/ltc/servers",
      *     summary="Get all LTC servers",
-     *     tags={"ltc"},
+     *     tags={"ltc","servers"},
      *     description="Get all servers by SAML EPPN attribute",
      *     operationId="findServers",
      *     produces={"application/json"},
