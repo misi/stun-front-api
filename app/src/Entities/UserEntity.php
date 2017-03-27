@@ -1,8 +1,9 @@
 <?php
+
 /**
  * @SWG\Definition(required={"username", "ha1_password"}, type="object", @SWG\Xml(name="User"))
  */
- class User
+class User
 {
     /**
      * @SWG\Property(format="int64")
@@ -29,4 +30,4 @@
      * @var string
      */
     public $realm;
-}:
+}

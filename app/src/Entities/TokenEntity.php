@@ -1,6 +1,7 @@
 <?php
+
 /**
- * @SWG\Definition(required={"token"}, type="object", @SWG\Xml(name="Token"))
+ * @SWG\Definition(required={"token","service_url"}, type="object", @SWG\Xml(name="Token"))
  */
 Class Token
 {
