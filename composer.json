@@ -4,5 +4,10 @@
         "zircote/swagger-php": "^2.0",
         "league/oauth2-server": "^5.1",
         "monolog/monolog": "^1.22"
+    },
+    "autoload": {
+        "psr-4": {
+            "STUN\\": "app/src"
+        }
     }
 }
