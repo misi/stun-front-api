@@ -205,7 +205,7 @@ final class LTCAction
 
     /**
      * @SWG\Delete(
-     *     path="ltc/user",
+     *     path="ltc/user1",
      *     summary="Delete User",
      *     description="",
      *     operationId="deleteUser",
