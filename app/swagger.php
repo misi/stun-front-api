@@ -18,7 +18,9 @@
   *     description="OAuth Client Credenrials Grant Flow",
   *     type="oauth2",
   *     flow="application",
+  *     authorizationUrl="https://vackor.lab.vvc.niif.hu/as/authorize",
   *     tokenUrl="https://vackor.lab.vvc.niif.hu/as/access_token",
+
   *     scopes={
   *         "ltc": "access to ltc service",
   *         "rest": "access to rest",
