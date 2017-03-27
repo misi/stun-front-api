@@ -12,10 +12,6 @@ $app->group('/v1',function() {
   });
 
   $this->group('/docs',function () {
-    $this->get('',function ($request, $response, $args) {
-      //TODO add twig swagger index
-      return $response->withStatus(200);
-    })->setName('docs');
 
     // swagger.json
     $this->get('/swagger.json',function ($request, $response, $args) {
@@ -23,6 +19,14 @@ $app->group('/v1',function() {
         return $response->withHeader('Content-Type', 'application/json')
         ->write($swagger);
     })->setName('swagger');
+
+    $this->get('',function ($request, $response, $args) {
+      return $this->get('view')->render($response, 'index.twig',
+              [
+                'json_url' => $this->router->pathFor('swagger'),
+		          ]
+            );
+    })->setName('docs');
 
   });
 
