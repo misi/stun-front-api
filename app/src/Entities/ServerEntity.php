@@ -16,7 +16,7 @@ class Server
     public $organization;
     /**
      * @SWG\Property()
-     * @var IP
+     * @var IP[]
      */
     public $ip;
     /**
