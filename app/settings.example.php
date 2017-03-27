@@ -4,6 +4,16 @@ return [
         // Slim Settings
         'displayErrorDetails' => true, // set to false in production
 
+        // View settings
+        'view' => [
+            'template_path' => __DIR__ . '/templates',
+            'twig' => [
+                'cache' => __DIR__ . '/../cache/twig',
+                'debug' => true,
+                'auto_reload' => true,
+            ],
+        ],
+
         // database settings
         'pdo' => [
             'dsn' => 'mysql:host=localhost;charset=utf8mb4;collation=utf8mb4_unicode_ci',
@@ -35,17 +45,17 @@ return [
               'email' => 'stun-devops@listserv.niif.hu',
               'displayname' => 'Contact Webform',
             ],
-            'subject' => 'Message from Contact Form';
+            'subject' => 'Message from Contact Form',
             'acknowledgement' => [
-              'subject' => 'Your feedback is highly Appreciated!'
-              'body' => 'Many thanks for Your feedback, we will contact you soon..'
-              'altbody' => 'Many thanks for Your feedback, we will contact you soon..'
+              'subject' => 'Your feedback is highly Appreciated!',
+              'body' => 'Many thanks for Your feedback, we will contact you soon..',
+              'altbody' => 'Many thanks for Your feedback, we will contact you soon..',
             ],
         ],
 
         // ResourceServer
         'resourceserver' => [
-          'publickey' => '../public.key'
+          'publickey' => '../public.key',
         ],
     ],
 ];
