@@ -1,6 +1,6 @@
 <?php
 /**
- * @SWG\Definition(required={"name", "photoUrls"}, type="object", @SWG\Xml(name="User"))
+ * @SWG\Definition(required={"username", "ha1_password"}, type="object", @SWG\Xml(name="User"))
  */
  class User
 {
