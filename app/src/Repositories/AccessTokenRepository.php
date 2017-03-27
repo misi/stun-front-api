@@ -1,11 +1,21 @@
 <?php
+
 namespace STUN\Repositories;
 use League\OAuth2\Server\Entities\AccessTokenEntityInterface;
 use League\OAuth2\Server\Entities\ClientEntityInterface;
 use League\OAuth2\Server\Repositories\AccessTokenRepositoryInterface;
 use STUN\Entities\AccessTokenEntity;
+use Psr\Log\LoggerInterface;
+
 class AccessTokenRepository implements AccessTokenRepositoryInterface
 {
+    private $logger;
+
+    public function __construct(LoggerInterface $logger)
+    {
+        $this->logger = $logger;
+    }
+
     /**
      * {@inheritdoc}
      */
