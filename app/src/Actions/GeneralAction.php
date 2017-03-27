@@ -23,6 +23,41 @@ final class GeneralAction
       $this->settings = $settings;
     }
 
+    /**
+     * @SWG\Post(
+     *     path="/general/feedback",
+     *     tags={"General"},
+     *     operationId="addFeedback",
+     *     summary="Add a new feedback",
+     *     description="",
+     *     consumes={"application/json"},
+     *     produces={"application/json"},
+     *     @SWG\Parameter(
+     *         name="body",
+     *         in="body",
+     *         description="Feedback object that needs to be added to the Service",
+     *         required=true,
+     *         @SWG\Schema(ref="#/definitions/Feedback"),
+     *     ),
+     *     @SWG\Response(
+     *         response=200,
+     *         description="successful operation",
+     *         @SWG\Schema(
+     *             type="array",
+     *             @SWG\Items(ref="#/definitions/Feedback")
+     *         ),
+     *     ),
+     *     @SWG\Response(
+     *         response=405,
+     *         description="Invalid input",
+     *     ),
+     *     @SWG\Response(
+     *         response="500",
+     *         description="Internal Server Error",
+     *     ),
+     *     security={{"client_auth":{"general"}}}
+     * )
+     */
 
     public function feedback(ServerRequestInterface $request, ResponseInterface $response, $args)
     {
