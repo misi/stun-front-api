@@ -25,8 +25,13 @@ class Server
      */
     public $ip;
     /**
-     * @SWG\Property()
-     * @var Geolocation
+     * @SWG\Property(example="47.544083")
+     * @var string
      */
-    public $geolocation;
+    public $latitude;
+    /**
+     * @SWG\Property(example="21.6397401")
+     * @var string
+     */
+    public $longitude;
 }
