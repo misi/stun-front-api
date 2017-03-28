@@ -11,7 +11,7 @@ $app->group('/v1',function() {
     return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
   });
 
-  $this->group('/docs',function () {
+  $this->group('/doc',function () {
 
     // swagger.json
     $this->get('/swagger.json',function ($request, $response, $args) {
@@ -23,7 +23,7 @@ $app->group('/v1',function() {
     $this->get('',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
-      return $view->render($response, 'index.twig',
+      return $view->render($response, 'swagger3.twig',
               [
                 'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
 		          ]
@@ -34,6 +34,16 @@ $app->group('/v1',function() {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'redoc.twig',
+              [
+                'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
+		          ]
+            );
+    })->setName('redoc');
+
+    $this->get('/2',function ($request, $response, $args) {
+      $view=$this->get('view');
+      $uri=$request->getUri();
+      return $view->render($response, 'swagger2.twig',
               [
                 'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
 		          ]
