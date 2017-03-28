@@ -48,7 +48,7 @@ $app->group('/v1',function() {
                 'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
 		          ]
             );
-    })->setName('redoc');
+    })->setName('swagger2');
 
   });
 
