@@ -15,6 +15,15 @@
 
 /**
   * @SWG\SecurityScheme(
+  *   securityDefinition="api_key",
+  *   type="apiKey",
+  *   in="header",
+  *   name="api_key"
+  * )
+  */
+  
+/**
+  * @SWG\SecurityScheme(
   *     securityDefinition="clientauth",
   *     description="OAuth Client Credenrials Grant Flow",
   *     type="oauth2",
