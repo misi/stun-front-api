@@ -2,7 +2,7 @@
 /**
   * @SWG\Swagger(
   *     schemes={"https"},
-  *     basePath="front/v1",
+  *     basePath="/front/v1",
   *     host="api.turn.geant.org",
   *     @SWG\Info(
   *         version="1.0",
