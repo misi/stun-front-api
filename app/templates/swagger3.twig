@@ -75,6 +75,7 @@ window.onload = function() {
   const ui = SwaggerUIBundle({
     url: "{{ json_url }}",
     dom_id: '#swagger-ui',
+    showRequestHeaders: true,
     presets: [
       SwaggerUIBundle.presets.apis,
       // yay ES6 modules ↘
