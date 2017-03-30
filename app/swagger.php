@@ -32,6 +32,22 @@
 
   /**
     * @SWG\SecurityScheme(
+    *     securityDefinition="implicit_auth",
+    *     description="OAuth Implicit Grant Flow",
+    *     type="oauth2",
+    *     flow="implicit",
+    *     authorizationUrl="https://vackor.lab.vvc.niif.hu/as/authorize",
+    *     scopes={
+    *         "ltc": "access to ltc service",
+    *         "rest": "access to rest",
+    *         "oauth": "access to oauth service",
+    *         "general": "access to general service",
+    *     }
+    * )
+    */
+
+  /**
+    * @SWG\SecurityScheme(
     *   securityDefinition="api_key",
     *   type="apiKey",
     *   in="header",
