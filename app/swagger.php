@@ -35,7 +35,7 @@
     *   securityDefinition="api_key",
     *   type="apiKey",
     *   in="header",
-    *   name="api_key"
+    *   name="Authorization"
     * )
     */
 
