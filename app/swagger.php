@@ -13,18 +13,26 @@
   * )
   */
 
+
 /**
   * @SWG\SecurityScheme(
-  *   securityDefinition="api_key",
-  *   type="apiKey",
-  *   in="header",
-  *   name="api_key"
+  *     securityDefinition="implicit",
+  *     description="OAuth Client Credenrials Grant Flow",
+  *     type="oauth2",
+  *     flow="implicit",
+  *     authorizeUrl="https://vackor.lab.vvc.niif.hu/as/authorize",
+  *     scopes={
+  *         "ltc": "access to ltc service",
+  *         "rest": "access to rest",
+  *         "oauth": "access to oauth service",
+  *         "general": "access to general service",
+  *     }
   * )
   */
-  
+
 /**
   * @SWG\SecurityScheme(
-  *     securityDefinition="clientauth",
+  *     securityDefinition="client",
   *     description="OAuth Client Credenrials Grant Flow",
   *     type="oauth2",
   *     flow="application",
@@ -37,3 +45,12 @@
   *     }
   * )
   */
+
+  /**
+    * @SWG\SecurityScheme(
+    *   securityDefinition="api_key",
+    *   type="apiKey",
+    *   in="header",
+    *   name="api_key"
+    * )
+    */
