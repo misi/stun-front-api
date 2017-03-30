@@ -66,6 +66,7 @@ final class LTCAction
      *     security={
      *         {
      *             "client_auth": {"ltc"},
+     *             "implicit_auth": {"ltc"},
      *             "api_key": {},
      *         }
      *     },
