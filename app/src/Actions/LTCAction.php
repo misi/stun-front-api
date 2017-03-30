@@ -65,7 +65,8 @@ final class LTCAction
      *     ),
      *     security={
      *         {
-     *             "client_auth": {"ltc"}
+     *             "client_auth": {"ltc"}.
+     *             "api_key",
      *         }
      *     },
      * )
@@ -109,8 +110,7 @@ final class LTCAction
      *     ),
      *     security={
      *         {
-     *             "client_auth": {"ltc"},
-     *             "api_key",
+     *             "client_auth": {"ltc"}
      *         }
      *     },
      * )
