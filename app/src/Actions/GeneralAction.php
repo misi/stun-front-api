@@ -55,7 +55,9 @@ final class GeneralAction
      *         response="500",
      *         description="Internal Server Error",
      *     ),
-     *     security={{"client_auth":{"general"}}}
+     *     security={
+     *        {"client_auth":{"general"}}
+     *     }
      * )
      */
 

@@ -13,30 +13,14 @@
   * )
   */
 
-
-/**
-  * @SWG\SecurityScheme(
-  *     securityDefinition="implicit",
-  *     description="OAuth Client Credenrials Grant Flow",
-  *     type="oauth2",
-  *     flow="implicit",
-  *     authorizeUrl="https://vackor.lab.vvc.niif.hu/as/authorize",
-  *     scopes={
-  *         "ltc": "access to ltc service",
-  *         "rest": "access to rest",
-  *         "oauth": "access to oauth service",
-  *         "general": "access to general service",
-  *     }
-  * )
-  */
-
+// -= SECURITY =-
 /**
   * @SWG\SecurityScheme(
   *     securityDefinition="client",
   *     description="OAuth Client Credenrials Grant Flow",
   *     type="oauth2",
-  *     flow="application",
-  *     tokenUrl="https://vackor.lab.vvc.niif.hu/as/access_token",
+  *     flow="implicit",
+  *     authorizeUrl="https://vackor.lab.vvc.niif.hu/as/authorize",
   *     scopes={
   *         "ltc": "access to ltc service",
   *         "rest": "access to rest",
@@ -54,3 +38,31 @@
     *   name="api_key"
     * )
     */
+
+// -= TAGS =-
+    /**
+     * @SWG\Tag(
+     *   name="LTC",
+     *   description="Everything about Long Term Credential Auth method",
+     *   @SWG\ExternalDocumentation(
+     *     description="Find out more",
+     *     url="https://turn.geant.org"
+     *   )
+     * )
+     * @SWG\Tag(
+     *   name="REST",
+     *   description="Everything about REST Auth method"
+     *   @SWG\ExternalDocumentation(
+     *     description="Find out more",
+     *     url="https://turn.geant.org"
+     *   )
+     * )
+     * @SWG\Tag(
+     *   name="user",
+     *   description="Operations about user",
+     *   @SWG\ExternalDocumentation(
+     *     description="Find out more about our store",
+     *     url="https://turn.geant.org"
+     *   )
+     * )
+     */
