@@ -21,6 +21,10 @@ $app->group('/v1',function() {
     })->setName('swagger');
 
     $this->get('',function ($request, $response, $args) {
+      return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
+    });
+
+    $this->get('/',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'swagger3.twig',
