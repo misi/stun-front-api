@@ -7,7 +7,7 @@ use League\OAuth2\Server\Middleware\ResourceServerMiddleware;
 $app->group('/v1',function() {
 
   // root redirect to doc
-  $this->get('/',function ($request, $response, $args) {
+  $this->get('',function ($request, $response, $args) {
     return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('doc'));
   });
 
@@ -20,7 +20,7 @@ $app->group('/v1',function() {
         ->write($swagger);
     })->setName('swagger');
 
-    $this->get('/',function ($request, $response, $args) {
+    $this->get('',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'swagger3.twig',
@@ -37,7 +37,7 @@ $app->group('/v1',function() {
     })->setName('oauth2-redirect');
 
 
-    $this->get('/redoc/',function ($request, $response, $args) {
+    $this->get('/redoc',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'redoc.twig',
@@ -47,7 +47,7 @@ $app->group('/v1',function() {
             );
     })->setName('redoc');
 
-    $this->get('/swagger2/',function ($request, $response, $args) {
+    $this->get('/swagger2',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'swagger2.twig',
