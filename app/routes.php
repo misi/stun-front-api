@@ -10,6 +10,9 @@ $app->group('/v1',function() {
   $this->get('',function ($request, $response, $args) {
     return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
   });
+  $this->get('/',function ($request, $response, $args) {
+    return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
+  });
 
   $this->group('/doc',function () {
 
