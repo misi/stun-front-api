@@ -75,7 +75,8 @@ window.onload = function() {
   const ui = SwaggerUIBundle({
     url: "{{ json_url }}",
     dom_id: '#swagger-ui',
-    showRequestHeaders: true,
+    oauth2RedirectUrl: "https://api.turn.geant.org/front/v1/oauth2-redirect.html",
+    showRequestHeaders: "true",
     presets: [
       SwaggerUIBundle.presets.apis,
       // yay ES6 modules ↘

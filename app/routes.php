@@ -30,6 +30,12 @@ $app->group('/v1',function() {
             );
     })->setName('docs');
 
+    $this->get('/oauth2-redirect.html',function ($request, $response, $args) {
+      $view=$this->get('view');
+      return $view->render($response, 'oauth2-redirect.twig',[]);
+    })->setName('docs');
+
+
     $this->get('/redoc',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
