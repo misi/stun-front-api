@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <title>Swagger UI</title>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="../swagger3/assets/css/swagger-ui.css" >
-  <link rel="stylesheet" type="text/css" href="../swagger3/assets/css/theme-flattop.css" >
-  <link rel="icon" type="image/png" href="../swagger3/assets/img/favicon-32x32.png" sizes="32x32" />
-  <link rel="icon" type="image/png" href="../swagger3/assets/img/favicon-16x16.png" sizes="16x16" />
+  <link rel="stylesheet" type="text/css" href="{{assets_url}}/css/swagger-ui.css" >
+  <link rel="stylesheet" type="text/css" href="{{assets_url}}/css/theme-flattop.css" >
+  <link rel="icon" type="image/png" href="{{assets_url}}/img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{{assets_url}}/img/favicon-16x16.png" sizes="16x16" />
   <style>
     html
     {
@@ -67,15 +67,15 @@
 
 <div id="swagger-ui"></div>
 
-<script src="../swagger3/assets/js/swagger-ui-bundle.js"> </script>
-<script src="../swagger3/assets/js/swagger-ui-standalone-preset.js"> </script>
+<script src="{{assets_url}}/js/swagger-ui-bundle.js"> </script>
+<script src="{{assets_url}}/js/swagger-ui-standalone-preset.js"> </script>
 <script>
 window.onload = function() {
   // Build a system
   const ui = SwaggerUIBundle({
     url: "{{ json_url }}",
     dom_id: '#swagger-ui',
-    oauth2RedirectUrl: "https://api.turn.geant.org/front/v1/oauth2-redirect.html",
+    oauth2RedirectUrl: "https://api.turn.geant.org/front/v1/doc/oauth2-redirect.html",
     showRequestHeaders: "true",
     presets: [
       SwaggerUIBundle.presets.apis,

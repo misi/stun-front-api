@@ -26,6 +26,7 @@ $app->group('/v1',function() {
       return $view->render($response, 'swagger3.twig',
               [
                 'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
+                'assets_url' => '../../swagger3/assets'
 		          ]
             );
     })->setName('doc');
