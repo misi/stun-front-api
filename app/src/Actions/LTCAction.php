@@ -20,14 +20,13 @@ final class LTCAction
 
     private $users;
 
+    private $servers;
 
-    public function __construct(LoggerInterface $logger, ServerRepository $servers)
+    public function __construct(LoggerInterface $logger, UserRepository $users, ServerRepository $servers)
     {
         $this->logger = $logger;
-        $this->authserver = $authserver;
-        $this->userrepository = $userrepository;
-        $this->view = $view;
-        $this->session = $session;
+        $this->users = $users;
+        $this->servers = $servers;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $args)
