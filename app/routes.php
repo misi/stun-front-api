@@ -7,11 +7,8 @@ use League\OAuth2\Server\Middleware\ResourceServerMiddleware;
 $app->group('/v1',function() {
 
   // root redirect to doc
-  $this->get('',function ($request, $response, $args) {
-    return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
-  });
   $this->get('/',function ($request, $response, $args) {
-    return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
+    return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('doc'));
   });
 
   $this->group('/doc',function () {
@@ -23,10 +20,6 @@ $app->group('/v1',function() {
         ->write($swagger);
     })->setName('swagger');
 
-    $this->get('',function ($request, $response, $args) {
-      return $response->withStatus(302)->withHeader('Location', $this->router->pathFor('docs'));
-    });
-
     $this->get('/',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
@@ -35,15 +28,15 @@ $app->group('/v1',function() {
                 'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
 		          ]
             );
-    })->setName('docs');
+    })->setName('doc');
 
     $this->get('/oauth2-redirect.html',function ($request, $response, $args) {
       $view=$this->get('view');
       return $view->render($response, 'oauth2-redirect.twig',[]);
-    })->setName('docs');
+    })->setName('oauth2-redirect');
 
 
-    $this->get('/redoc',function ($request, $response, $args) {
+    $this->get('/redoc/',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'redoc.twig',
@@ -53,7 +46,7 @@ $app->group('/v1',function() {
             );
     })->setName('redoc');
 
-    $this->get('/2',function ($request, $response, $args) {
+    $this->get('/swagger2/',function ($request, $response, $args) {
       $view=$this->get('view');
       $uri=$request->getUri();
       return $view->render($response, 'swagger2.twig',
