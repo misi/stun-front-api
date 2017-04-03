@@ -52,7 +52,8 @@ $app->group('/v1',function() {
       $uri=$request->getUri();
       return $view->render($response, 'swagger2.twig',
               [
-                'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger')
+                'json_url' => $uri->getScheme()."://".$uri->getAuthority().$this->router->pathFor('swagger'),
+                'assets_url' => '../../swagger2'
 		          ]
             );
     })->setName('swagger2');
