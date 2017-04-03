@@ -1,7 +1,4 @@
 <?php
-/**
- * @author      Mihály Mészáros <misi@niif.hu>
- */
 
 namespace STUN\Repositories;
 
