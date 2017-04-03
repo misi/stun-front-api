@@ -8,8 +8,8 @@ use Zend\Diactoros\Stream;
 
 use Psr\Log\LoggerInterface;
 
-use STUN\Repositories\ClientRepository
-use STUN\Repositories\ServerRepository
+use STUN\Repositories\ClientRepository;
+use STUN\Repositories\ServerRepository;
 
 
 
