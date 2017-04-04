@@ -82,12 +82,12 @@ $app->group('/v1',function() {
   $this->group('/rest',function(){
 
     // token
-    $this->get('/token',STUN\Actions\LTCAction::class . ':getToken');
-    $this->post('/token',STUN\Actions\LTCAction::class . ':addToken');
-    $this->delete('/token',STUN\Actions\LTCAction::class . ':deleteToken');
+    $this->get('/token',STUN\Actions\RESTAction::class . ':getToken');
+    $this->post('/token',STUN\Actions\RESTAction::class . ':addToken');
+    $this->delete('/token',STUN\Actions\RESTAction::class . ':deleteToken');
 
     // servers
-    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
+    $this->get('/servers',STUN\Actions\RESTAction::class .':getServers');
 
   })->add(
     new ResourceServerMiddleware(
@@ -99,17 +99,17 @@ $app->group('/v1',function() {
   $this->group('/oauth',function(){
 
     //client
-    $this->get('/client',STUN\Actions\LTCAction::class . ':getClient');
-    $this->post('/client',STUN\Actions\LTCAction::class . ':addClient');
-    $this->delete('/client',STUN\Actions\LTCAction::class . ':deleteClient');
+    $this->get('/client',STUN\Actions\OAuthAction::class . ':getClient');
+    $this->post('/client',STUN\Actions\OAuthAction::class . ':addClient');
+    $this->delete('/client',STUN\Actions\OAuthAction::class . ':deleteClient');
 
     // servers
-    $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
+    $this->get('/servers',STUN\Actions\OAuthAction::class .':getServers');
   });
 
   // General
   $this->group('/general',function(){
-    $this->post('/feedback',STUN\Actions\LTCAction::class .':feedback');
+    $this->post('/feedback',STUN\Actions\GeneralAction::class .':feedback');
   })->add(
     new ResourceServerMiddleware(
         $this->getContainer()->get('resource_server')
