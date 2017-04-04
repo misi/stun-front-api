@@ -55,7 +55,15 @@ return [
 
         // ResourceServer
         'resourceserver' => [
-          'publickey' => '../public.key',
+            'publickey' => '../public.key',
+        ],
+
+        // Actions & Scopes
+        'scope' => [
+            'ltc' => 'ltc',
+            'rest' => 'rest',
+            'oauth' => 'oauth',
+            'general' => 'general',
         ],
     ],
 ];
