@@ -29,19 +29,6 @@ final class LTCAction
         $this->servers = $servers;
     }
 
-    public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $args)
-    {
-        $this->logger->debug("LTC action dispatched");
-
-        try {
-
-        } catch (\Exception $exception) {
-            $body = new Stream('php://temp', 'r+');
-            $body->write($exception->getMessage());
-
-            return $response->withStatus(500)->withBody($body);
-        }
-    }
     /**
      * @SWG\Get(
      *     path="/ltc/servers",
@@ -72,6 +59,18 @@ final class LTCAction
      * )
      */
      public function getServers(ServerRequestInterface $request, ResponseInterface $response, $args){
+       //log
+       $this->logger->debug("LTC getServers dispatched");
+
+       try {
+
+       } catch (\Exception $exception) {
+           $body = new Stream('php://temp', 'r+');
+           $body->write($exception->getMessage());
+
+           return $response->withStatus(500)->withBody($body);
+       }
+
      }
 
 
@@ -116,6 +115,20 @@ final class LTCAction
      * )
      */
      public function getUser(ServerRequestInterface $request, ResponseInterface $response, $args){
+        $tokenClientId=$request->getAttribute('oauth_client_id');
+        //log
+        $this->logger->debug("LTC getUser dispatched");
+
+        try {
+          $response->getBody()->write($tokenClientId);
+          return $response->withStatus(200);
+        } catch (\Exception $exception) {
+            $body = new Stream('php://temp', 'r+');
+            $body->write($exception->getMessage());
+
+            return $response->withStatus(500)->withBody($body);
+        }
+
      }
 
      /**
