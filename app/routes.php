@@ -73,6 +73,10 @@ $app->group('/v1',function() {
     // servers
     $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
   })->add(
+    new ScopeCheckMiddleware(
+      $container->get('settings')['scope']['ltc'];
+    )
+  )->add(
     new ResourceServerMiddleware(
         $this->getContainer()->get('resource_server')
     )
@@ -90,6 +94,10 @@ $app->group('/v1',function() {
     $this->get('/servers',STUN\Actions\RESTAction::class .':getServers');
 
   })->add(
+    new ScopeCheckMiddleware(
+      $container->get('settings')['scope']['rest'];
+    )
+  )->add(
     new ResourceServerMiddleware(
         $this->getContainer()->get('resource_server')
     )
@@ -105,12 +113,24 @@ $app->group('/v1',function() {
 
     // servers
     $this->get('/servers',STUN\Actions\OAuthAction::class .':getServers');
-  });
+  })->add(
+    new ScopeCheckMiddleware(
+      $container->get('settings')['scope']['oauth'];
+    )
+  )->add(
+    new ResourceServerMiddleware(
+        $this->getContainer()->get('resource_server')
+    )
+  );
 
   // General
   $this->group('/general',function(){
     $this->post('/feedback',STUN\Actions\GeneralAction::class .':feedback');
   })->add(
+    new ScopeCheckMiddleware(
+      $container->get('settings')['scope']['general'];
+    )
+  )->add(
     new ResourceServerMiddleware(
         $this->getContainer()->get('resource_server')
     )
