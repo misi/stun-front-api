@@ -15,11 +15,11 @@ class ScopeCheckMiddleware
     /**
      * Scope Check middleware class constructor
      *
-     * @param  String   $scope  Required Scope
+     * @param  $scope  Required Scope
      *
      */
 
-    public function __construct(String $scope)
+    public function __construct($scope)
     {
         $this->scope = $scope;
     }
