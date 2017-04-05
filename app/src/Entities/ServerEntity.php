@@ -1,4 +1,5 @@
 <?php
+namespace STUN\Entities;
 /**
  * @SWG\Definition(required={"fqdn","ip","organization","geolocation"}, type="object", @SWG\Xml(name="Server"))
  */

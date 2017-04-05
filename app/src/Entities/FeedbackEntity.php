@@ -1,5 +1,5 @@
 <?php
-
+namespace STUN\Entities;
 /**
  * @SWG\Definition(required={"address"}, type="object", @SWG\Xml(name="Feedback"))
  */

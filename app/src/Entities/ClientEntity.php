@@ -1,5 +1,5 @@
 <?php
-
+namespace STUN\Entities;
 /**
  * @SWG\Definition(required={"token","service_url"}, type="object", @SWG\Xml(name="Client"))
  */

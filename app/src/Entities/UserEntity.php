@@ -1,5 +1,5 @@
 <?php
-
+namespace STUN\Entities;
 /**
  * @SWG\Definition(required={"username", "ha1_password"}, type="object", @SWG\Xml(name="User"))
  */
