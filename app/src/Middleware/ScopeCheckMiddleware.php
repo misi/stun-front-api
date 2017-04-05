@@ -4,15 +4,26 @@ namespace STUN\Middleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-private $scope;
 
-public function __construct(String $scope)
-{
-    $this->scope = $scope;
-}
+
 
 class ScopeCheckMiddleware
 {
+    // Required Scope
+    private $scope;
+
+    /**
+     * Scope Check middleware class constructor
+     *
+     * @param  String   $scope  Required Scope
+     *
+     */
+
+    public function __construct(String $scope)
+    {
+        $this->scope = $scope;
+    }
+
     /**
      * Scope Check middleware invokable class
      *
@@ -29,7 +40,8 @@ class ScopeCheckMiddleware
             $response = $next($request, $response);
             return $response;
         } else {
-            $response->getBody()->write('Issue During Token Scope Validation!!');
+            $response->getBody()->write('Please check Access Token Sopes!');
+            $response->getBody()->write('Problem has occured during Scope Validation!!');
             $response->getBody()->write('Access Token scope(s): '.print_r($tokenScopes,true));
             $response->getBody()->write('Required scope: '.$this->scope);
             return $response->withStatus(500);
