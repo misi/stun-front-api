@@ -74,7 +74,7 @@ $app->group('/v1',function() {
     $this->get('/servers',STUN\Actions\LTCAction::class .':serverList');
   })->add(
     new ScopeCheckMiddleware(
-      $container->get('settings')['scope']['ltc'];
+      $container->get('settings')['scope']['ltc']
     )
   )->add(
     new ResourceServerMiddleware(
@@ -95,7 +95,7 @@ $app->group('/v1',function() {
 
   })->add(
     new ScopeCheckMiddleware(
-      $container->get('settings')['scope']['rest'];
+      $container->get('settings')['scope']['rest']
     )
   )->add(
     new ResourceServerMiddleware(
@@ -115,7 +115,7 @@ $app->group('/v1',function() {
     $this->get('/servers',STUN\Actions\OAuthAction::class .':getServers');
   })->add(
     new ScopeCheckMiddleware(
-      $container->get('settings')['scope']['oauth'];
+      $container->get('settings')['scope']['oauth']
     )
   )->add(
     new ResourceServerMiddleware(
@@ -128,7 +128,7 @@ $app->group('/v1',function() {
     $this->post('/feedback',STUN\Actions\GeneralAction::class .':feedback');
   })->add(
     new ScopeCheckMiddleware(
-      $container->get('settings')['scope']['general'];
+      $container->get('settings')['scope']['general']
     )
   )->add(
     new ResourceServerMiddleware(
