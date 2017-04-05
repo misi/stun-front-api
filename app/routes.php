@@ -3,7 +3,7 @@
 
 use League\OAuth2\Server\ResourceServer;
 use League\OAuth2\Server\Middleware\ResourceServerMiddleware;
-use STUN\Middleware\ScopeCheckMiddleware
+use STUN\Middleware\ScopeCheckMiddleware;
 
 $app->group('/v1',function() {
 
