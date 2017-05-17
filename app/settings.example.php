@@ -68,7 +68,7 @@ return [
 
         // Databases
         'db' => [
-            'ltc' => 'cotrun-ltc',
+            'ltc' => 'coturn-ltc',
             'rest' => 'coturn-rest',
             'oauth' => 'oauth-rest',
         ],
