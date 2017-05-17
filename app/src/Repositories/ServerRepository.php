@@ -27,7 +27,7 @@ class ServerRepository
      *
      * @return ServerEntity[]
      */
-    getServers(){
+    public function getServers(){
       if($this->pdo->query("use ".$this->db){
           $sql="SELECT * FROM `server`";
           if($server_stmt=$this->pdo->query($sql)){
