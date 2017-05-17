@@ -65,5 +65,13 @@ return [
             'oauth' => 'oauth',
             'general' => 'general',
         ],
+
+        // Databases
+        'db' => [
+            'ltc' => 'cotrun-ltc',
+            'rest' => 'coturn-rest',
+            'oauth' => 'oauth-rest',
+        ],
+
     ],
 ];
