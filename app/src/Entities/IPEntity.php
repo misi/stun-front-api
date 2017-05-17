@@ -15,4 +15,10 @@ class IP
      * @SWG\Property(enum={"IPv4", "IPv6"})
      */
     public $type;
+    /**
+     * @var integer
+     * @SWG\Property(example=1)
+     */
+    public $preference;
+
 }
