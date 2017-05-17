@@ -22,11 +22,11 @@ final class LTCAction
 
     private $servers;
 
-    public function __construct(LoggerInterface $logger, UserRepository $users, ServerRepository $servers)
+    public function __construct(LoggerInterface $logger, UserRepository $users, ServerRepository $serverRepository)
     {
         $this->logger = $logger;
         $this->users = $users;
-        $this->servers = $servers;
+        $this->serverRepository = $serverRepository;
     }
 
     /**
@@ -63,7 +63,8 @@ final class LTCAction
        $this->logger->debug("LTC getServers dispatched");
 
        try {
-
+          $servers=$this->serverRepository->getServers();
+          return $response->withJson($servers,200);
        } catch (\Exception $exception) {
            $body = new Stream('php://temp', 'r+');
            $body->write($exception->getMessage());
