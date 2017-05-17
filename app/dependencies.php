@@ -68,30 +68,38 @@ $container['logger'] = function ($c) {
 
 
 //Repositories
+
+//LTC
 $container['ltc_users'] = function ($c) {
     return new STUN\Repositories\UserRepository($c->get('pdo'), $c->get('logger'));
 };
 
 $container['ltc_servers'] = function ($c) {
-    return new STUN\Repositories\ServerRepository($c->get('pdo'), $c->get('logger'),'ltc');
+    $settings = $c->get('settings')['db'];
+    return new STUN\Repositories\ServerRepository($c->get('pdo'), $c->get('logger'), $settings['ltc']);
 };
 
+//REST
 $container['rest_tokens'] = function ($c) {
     return new STUN\Repositories\TokenRepository($c->get('pdo'), $c->get('logger'));
 };
 
 $container['rest_servers'] = function ($c) {
-    return new STUN\Repositories\ServerRepository($c->get('pdo'), $c->get('logger'),'rest');
+    $settings = $c->get('settings')['db'];
+    return new STUN\Repositories\ServerRepository($c->get('pdo'), $c->get('logger'), $settings['rest']);
 };
 
 
+//OAuth
 $container['oauth_clients'] = function ($c) {
     return new STUN\Repositories\ClientRepository($c->get('pdo'), $c->get('logger'));
 };
 
 $container['oauth_servers'] = function ($c) {
-    return new STUN\Repositories\ServerRepository($c->get('pdo'), $c->get('logger'),'oauth');
+    $settings = $c->get('settings')['db'];
+    return new STUN\Repositories\ServerRepository($c->get('pdo'), $c->get('logger'), $settings['oauth']);
 };
+
 
 
 $container['access_tokens'] = function ($c) {
