@@ -56,7 +56,7 @@ class ServerRepository
                   }else{
                       $this->logger->error('Error occurred during select from IP table!');
                   }
-                  $servers[]=$server
+                  $servers[]=$server;
               }
               return $servers;
           } else {
