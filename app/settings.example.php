@@ -70,7 +70,7 @@ return [
         'db' => [
             'ltc' => 'coturn-ltc',
             'rest' => 'coturn-rest',
-            'oauth' => 'oauth-rest',
+            'oauth' => 'coturn-rest',
         ],
 
     ],
