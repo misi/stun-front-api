@@ -67,6 +67,12 @@ final class GeneralAction
         $this->logger->debug("General action feedback dispatched");
 
         try{
+          $params=$request->getParsedBody();
+
+          if(!$params['email'] || !$params['message']){
+            $response->withStatus(405);
+          }
+
           $mail = new PHPMailer;
           $mail->SMTPDebug = $this->settings['debug'];  // Enable verbose debug output
           $mail->isSMTP();        // Set mailer to use SMTP
@@ -82,25 +88,24 @@ final class GeneralAction
           $mail->isHTML(true);
 
           $mail->Subject = $this->settings['subject'];
-          $params=$request->getParsedBody();
-          $mail->Body    = "Name: ".$params['Name']."<br>Email: ".$params['Email']."<br>Phone: ".$params['Phone']."<br>Message:".$params['Message'];
-          $mail->AltBody = "Name: ".$params['Name']."\nEmail: ".$params['Email']."\nPhone: ".$params['Phone']."\nMessage:".$params['Message'];
+          $mail->Body    = "Name: ".$params['name']."<br>Email: ".$params['email']."<br>Phone: ".$params['phone']."<br>Message:".$params['message'];
+          $mail->AltBody = "Name: ".$params['name']."\nEmail: ".$params['email']."\nPhone: ".$params['phone']."\nMessage:".$params['message'];
 
           $mail->send();
 
           // cleanup
           $mail->ClearAddresses();
 
-          $mail->addAddress($params['Email'], $params['Name']);     // Add a recipient
+          $mail->addAddress($params['email'], $params['name']);     // Add a recipient
           $mail->Subject = ['acknowledgement']['subject'];
           $mail->Body = ['acknowledgement']['body'];
           $mail->AltBody = ['acknowledgement']['altbody'];
 
           $mail->Send();
-       } catch (phpmailerException $e) {
+          $response->withStatus(200);
+        } catch (phpmailerException $e) {
          $this->logger->info($e->errorMessage());
          return $response->withStatus(500);
-       }
-       $response->withStatus(200);
+        }
      }
 }
