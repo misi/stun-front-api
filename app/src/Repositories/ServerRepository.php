@@ -28,6 +28,7 @@ class ServerRepository
      * @return ServerEntity[]
      */
     public function getServers(){
+      try {
         $this->pdo->query("use ".$this->db);
         $sql="SELECT * FROM `server`";
         $server_stmt=$this->pdo->query($sql);
@@ -56,5 +57,8 @@ class ServerRepository
             $servers[]=$server;
         }
         return $servers;
+      } catch(Exception $e) {
+        $this->logger->error($e->getTraceAsString());
+      }
     }
 }
