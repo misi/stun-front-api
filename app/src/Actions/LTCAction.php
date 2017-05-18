@@ -68,7 +68,7 @@ final class LTCAction
        } catch (\Exception $exception) {
            $body = new Stream('php://temp', 'r+');
            $body->write($exception->getMessage());
-
+           $body->write($exception->getTraceAsString());
            return $response->withStatus(500)->withBody($body);
        }
 
