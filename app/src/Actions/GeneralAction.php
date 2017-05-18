@@ -10,6 +10,7 @@ use Psr\Log\LoggerInterface;
 
 use STUN\Repositories\UserRepository;
 use STUN\Repositories\ServerRepository;
+use \PHPMailer
 
 final class GeneralAction
 {
@@ -66,7 +67,7 @@ final class GeneralAction
         $this->logger->debug("General action feedback dispatched");
 
         try{
-          $mail = new \PHPMailer;
+          $mail = new PHPMailer;
           $mail->SMTPDebug = $this->settings['debug'];  // Enable verbose debug output
           $mail->isSMTP();        // Set mailer to use SMTP
           $mail->Host = $this->settings['host'];  // Specify main and backup SMTP servers
