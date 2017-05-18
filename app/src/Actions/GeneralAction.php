@@ -100,6 +100,6 @@ final class GeneralAction
          $this->logger->info($e->errorMessage());
          return $response->withStatus(500);
        }
-       $this->withStatus(200);
+       $response->withStatus(200);
      }
 }
