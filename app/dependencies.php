@@ -129,14 +129,14 @@ $container[STUN\Actions\LTCAction::class] = function ($c) {
 };
 
 $container[STUN\Actions\RESTAction::class] = function ($c) {
-    return new STUN\Actions\TokenAction($c->get('logger'),
+    return new STUN\Actions\RESTAction($c->get('logger'),
                                         $c->get('rest_tokens'),
                                         $c->get('rest_servers')
                                       );
 };
 
 $container[STUN\Actions\OAuthAction::class] = function ($c) {
-    return new STUN\Actions\OAuthAction($c->get('logger'),                                      
+    return new STUN\Actions\OAuthAction($c->get('logger'),
                                         $c->get('oauth_clients'),
                                         $c->get('oauth_servers')
                                       );
