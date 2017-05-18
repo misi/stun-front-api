@@ -3,7 +3,7 @@ namespace STUN\Entities;
 /**
  * @SWG\Definition(required={"token","service_url"}, type="object", @SWG\Xml(name="Client"))
  */
-Class Client
+Class ClientEntity
 {
     /**
      * @SWG\Property(format="int64")

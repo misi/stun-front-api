@@ -1,9 +1,9 @@
 <?php
 namespace STUN\Entities;
 /**
- * @SWG\Definition(required={"fqdn","ip","organization","geolocation"}, type="object", @SWG\Xml(name="Server"))
+ * @SWG\Definition(required={"fqdn","ip","organization","geolocation"}, type="object", @SWG\Xml(name="ServerEntity"))
  */
-class Server
+class ServerEntity
 {
     /**
      * @SWG\Property(example="turn1.lab.vvc.niif.hu")
@@ -17,7 +17,7 @@ class Server
     public $organization;
     /**
      * @SWG\Property()
-     * @var IP[]
+     * @var IPEntity[]
      */
     public $ip;
     /**

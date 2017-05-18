@@ -1,9 +1,9 @@
 <?php
 namespace STUN\Entities;
 /**
- * @SWG\Definition(required={"token","service_url"}, type="object", @SWG\Xml(name="Token"))
+ * @SWG\Definition(required={"token","service_url"}, type="object", @SWG\Xml(name="TokenEntity"))
  */
-Class Token
+Class TokenEntity
 {
     /**
      * @SWG\Property(format="int64")

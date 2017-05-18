@@ -1,9 +1,9 @@
 <?php
 namespace STUN\Entities;
 /**
- * @SWG\Definition(required={"username", "ha1_password"}, type="object", @SWG\Xml(name="User"))
+ * @SWG\Definition(required={"username", "ha1_password"}, type="object", @SWG\Xml(name="UserEntity"))
  */
-class User
+class UserEntity
 {
     /**
      * @SWG\Property(example="user1")

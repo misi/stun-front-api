@@ -3,7 +3,7 @@ namespace STUN\Entities;
 /**
  * @SWG\Definition(required={"address"}, type="object", @SWG\Xml(name="IP"))
  */
-class IP
+class IPEntity
 {
     /**
      * @SWG\Property(example="192.0.2.10")
