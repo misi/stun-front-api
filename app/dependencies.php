@@ -136,8 +136,7 @@ $container[STUN\Actions\RESTAction::class] = function ($c) {
 };
 
 $container[STUN\Actions\OAuthAction::class] = function ($c) {
-    return new STUN\Actions\OAuthAction($c->get('logger'),
-                                        $c->get('pdo'),
+    return new STUN\Actions\OAuthAction($c->get('logger'),                                      
                                         $c->get('oauth_clients'),
                                         $c->get('oauth_servers')
                                       );
