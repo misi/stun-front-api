@@ -12,7 +12,7 @@ class FeedbackEntity
     public $name;
 
     /**
-      * @SWG\Property(example="alice@atlanta.co")
+      * @SWG\Property(example="alice@atlanta.com")
       * @var string
       */
     public $email;
