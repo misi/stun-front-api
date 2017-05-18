@@ -47,7 +47,7 @@ class ServerRepository
             foreach ($ip_result as $ip_row) {
                 $ip = new IPEntity();
 
-                $ip->address = $ip_row['address'];
+                $ip->ip = $ip_row['ip'];
                 $ip->type = $ip_row['ipv6'] ? 'IPv6' : 'IPv4';
                 $ip->preference = $ip_row['preference'];
 
