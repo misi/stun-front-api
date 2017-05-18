@@ -44,7 +44,7 @@ final class GeneralAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Feedback")
+     *             @SWG\Items(ref="#/definitions/FeedbackEntity")
      *         ),
      *     ),
      *     @SWG\Response(

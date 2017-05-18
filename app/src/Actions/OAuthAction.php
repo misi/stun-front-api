@@ -53,7 +53,7 @@ final class OAuthAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Server")
+     *             @SWG\Items(ref="#/definitions/ServerEntity")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -93,7 +93,7 @@ final class OAuthAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Client")
+     *             @SWG\Items(ref="#/definitions/ClientEntity")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -128,14 +128,14 @@ final class OAuthAction
       *         in="body",
       *         description="Client object that needs to be added to the Service",
       *         required=true,
-      *         @SWG\Schema(ref="#/definitions/Client"),
+      *         @SWG\Schema(ref="#/definitions/ClientEntity"),
       *     ),
       *     @SWG\Response(
       *         response=200,
       *         description="successful operation",
       *         @SWG\Schema(
       *             type="array",
-      *             @SWG\Items(ref="#/definitions/Client")
+      *             @SWG\Items(ref="#/definitions/ClientEntity")
       *         ),
       *     ),
       *     @SWG\Response(
@@ -167,14 +167,14 @@ final class OAuthAction
      *         in="body",
      *         description="Client object that needs to be updated",
      *         required=true,
-     *         @SWG\Schema(ref="#/definitions/Client"),
+     *         @SWG\Schema(ref="#/definitions/ClientEntity"),
      *     ),
      *     @SWG\Response(
      *         response=200,
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Client")
+     *             @SWG\Items(ref="#/definitions/ClientEntity")
      *         ),
      *     ),
      *     @SWG\Response(

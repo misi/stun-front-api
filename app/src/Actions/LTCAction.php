@@ -42,7 +42,7 @@ final class LTCAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Server")
+     *             @SWG\Items(ref="#/definitions/ServerEntity")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -97,7 +97,7 @@ final class LTCAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/User")
+     *             @SWG\Items(ref="#/definitions/UserEntity")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -146,14 +146,14 @@ final class LTCAction
       *         in="body",
       *         description="User object that needs to be added to the Service",
       *         required=true,
-      *         @SWG\Schema(ref="#/definitions/User"),
+      *         @SWG\Schema(ref="#/definitions/UserEntity"),
       *     ),
       *     @SWG\Response(
       *         response=200,
       *         description="successful operation",
       *         @SWG\Schema(
       *             type="array",
-      *             @SWG\Items(ref="#/definitions/User")
+      *             @SWG\Items(ref="#/definitions/UserEntity")
       *         ),
       *     ),
       *     @SWG\Response(
@@ -192,7 +192,7 @@ final class LTCAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/User")
+     *             @SWG\Items(ref="#/definitions/UserEntity")
      *         ),
      *     ),
      *     @SWG\Response(

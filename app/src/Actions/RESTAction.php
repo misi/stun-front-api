@@ -53,7 +53,7 @@ final class RESTAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Server")
+     *             @SWG\Items(ref="#/definitions/ServerEntity")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -93,7 +93,7 @@ final class RESTAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Token")
+     *             @SWG\Items(ref="#/definitions/TokenEntity")
      *         ),
      *     ),
      *     @SWG\Response(
@@ -135,7 +135,7 @@ final class RESTAction
       *         description="successful operation",
       *         @SWG\Schema(
       *             type="array",
-      *             @SWG\Items(ref="#/definitions/Token")
+      *             @SWG\Items(ref="#/definitions/TokenEntity")
       *         ),
       *     ),
       *     @SWG\Response(
@@ -174,7 +174,7 @@ final class RESTAction
      *         description="successful operation",
      *         @SWG\Schema(
      *             type="array",
-     *             @SWG\Items(ref="#/definitions/Token")
+     *             @SWG\Items(ref="#/definitions/TokenEntity")
      *         ),
      *     ),
      *     @SWG\Response(
