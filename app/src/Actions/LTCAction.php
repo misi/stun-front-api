@@ -20,7 +20,7 @@ final class LTCAction
 
     private $users;
 
-    private $servers;
+    private $serverRepository;
 
     public function __construct(LoggerInterface $logger, UserRepository $users, ServerRepository $serverRepository)
     {

@@ -18,13 +18,16 @@ final class RESTAction
 {
     private $logger;
 
-    private $servers;
+    private $tokenRepository;
+
+    private $serverRepository;
 
 
-    public function __construct(LoggerInterface $logger, ServerRepository $servers)
+    public function __construct(LoggerInterface $logger, TokenRepository $tokenRepository, ServerRepository $serverRepository)
     {
         $this->logger = $logger;
-        $this->servers = $servers;
+        $this->tokenRepository = $tokenRepository;
+        $this->serverRepository = $serverRepository;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $args)

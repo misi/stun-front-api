@@ -18,13 +18,15 @@ final class OAuthAction
 {
     private $logger;
 
-    private $servers;
+    private $clientRepository;
+
+    private $serverRepository;
 
 
-    public function __construct(LoggerInterface $logger, ServerRepository $servers)
+    public function __construct(LoggerInterface $logger, ClientRepository $clientRepository, ServerRepository $serverRepository)
     {
         $this->logger = $logger;
-        $this->servers = $servers;
+        $this->serverRepository = $serverRepository;
     }
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, $args)
