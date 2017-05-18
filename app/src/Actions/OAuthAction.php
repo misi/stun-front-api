@@ -68,6 +68,17 @@ final class OAuthAction
      * )
      */
      public function getServers(ServerRequestInterface $request, ResponseInterface $response, $args){
+       $this->logger->debug("OAuth getServers dispatched");
+
+       try {
+          $servers=$this->serverRepository->getServers();
+          return $response->withJson($servers,200);
+       } catch (\Exception $exception) {
+           $body = new Stream('php://temp', 'r+');
+           $body->write($exception->getMessage());
+           $body->write($exception->getTraceAsString());
+           return $response->withStatus(500)->withBody($body);
+       }
      }
 
 
