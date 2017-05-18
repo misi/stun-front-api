@@ -97,9 +97,9 @@ final class GeneralAction
           $mail->ClearAddresses();
 
           $mail->addAddress($params['email'], $params['name']);     // Add a recipient
-          $mail->Subject = ['acknowledgement']['subject'];
-          $mail->Body = ['acknowledgement']['body'];
-          $mail->AltBody = ['acknowledgement']['altbody'];
+          $mail->Subject = $this->settings['acknowledgement']['subject'];
+          $mail->Body = $this->settings['acknowledgement']['body'];
+          $mail->AltBody = $this->settings['acknowledgement']['altbody'];
 
           $mail->Send();
           $response->withStatus(200);
