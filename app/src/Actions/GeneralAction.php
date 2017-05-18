@@ -10,7 +10,7 @@ use Psr\Log\LoggerInterface;
 
 use STUN\Repositories\UserRepository;
 use STUN\Repositories\ServerRepository;
-use \PHPMailer
+use \PHPMailer;
 
 final class GeneralAction
 {
