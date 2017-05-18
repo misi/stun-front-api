@@ -5,15 +5,26 @@ namespace STUN\Entities;
  */
 class FeedbackEntity
 {
-    //TODO: Add all fields!
     /**
-     * @SWG\Property(example="alice@atlanta.com")
+      * @SWG\Property(example="Alice")
+      * @var string
+      */
+    public $name;
+
+    /**
+      * @SWG\Property(example="alice@atlanta.co")
+      * @var string
+      */
+    public $email;
+
+    /**
+     * @SWG\Property(example="+36-1-4503060")
      * @var string
      */
-    public $Fromaddress;
+    public $email;
     /**
      * @SWG\Property(example="Houston we have problem!")
      * @var string
      */
-    public $msg;
+    public $message;
 }
