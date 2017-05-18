@@ -9,7 +9,7 @@ class IPEntity
      * @SWG\Property(example="192.0.2.10")
      * @var string
      */
-    public $address;
+    public $ip;
     /**
      * @var string
      * @SWG\Property(enum={"IPv4", "IPv6"})
