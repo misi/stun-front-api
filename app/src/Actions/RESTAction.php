@@ -128,7 +128,7 @@ final class RESTAction
       *         in="body",
       *         description="Token object that needs to be added to the Service",
       *         required=true,
-      *         @SWG\Schema(ref="#/definitions/Token"),
+      *         @SWG\Schema(ref="#/definitions/TokenEntity"),
       *     ),
       *     @SWG\Response(
       *         response=200,
@@ -167,7 +167,7 @@ final class RESTAction
      *         in="body",
      *         description="Token object that needs to be updated",
      *         required=true,
-     *         @SWG\Schema(ref="#/definitions/Token"),
+     *         @SWG\Schema(ref="#/definitions/TokenEntity"),
      *     ),
      *     @SWG\Response(
      *         response=200,

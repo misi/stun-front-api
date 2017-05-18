@@ -37,7 +37,7 @@ final class GeneralAction
      *         in="body",
      *         description="Feedback object that needs to be added to the Service",
      *         required=true,
-     *         @SWG\Schema(ref="#/definitions/Feedback"),
+     *         @SWG\Schema(ref="#/definitions/FeedbackEntity"),
      *     ),
      *     @SWG\Response(
      *         response=200,

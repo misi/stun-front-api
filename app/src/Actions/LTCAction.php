@@ -185,7 +185,7 @@ final class LTCAction
      *         in="body",
      *         description="User object that needs to be updated",
      *         required=true,
-     *         @SWG\Schema(ref="#/definitions/User"),
+     *         @SWG\Schema(ref="#/definitions/UserEntity"),
      *     ),
      *     @SWG\Response(
      *         response=200,
