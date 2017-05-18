@@ -13,7 +13,7 @@ class TokenRepository
 
     private $service;
 
-    public function __construct(PDO $pdo, LoggerInterface $logger,$service)
+    public function __construct(PDO $pdo, LoggerInterface $logger)
     {
         $this->pdo = $pdo;
         $this->logger = $logger;
