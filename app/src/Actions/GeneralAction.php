@@ -101,4 +101,5 @@ final class GeneralAction
          return $response->withStatus(500);
        }
        $this->withStatus(200);
-};
+     }
+}
