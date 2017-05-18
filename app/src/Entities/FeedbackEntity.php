@@ -21,7 +21,7 @@ class FeedbackEntity
      * @SWG\Property(example="+36-1-4503060")
      * @var string
      */
-    public $email;
+    public $phone;
     /**
      * @SWG\Property(example="Houston we have problem!")
      * @var string
